@@ -9,7 +9,8 @@ import { User } from '../models/user';
         realm: null,
         username: null,
         email: null,
-        emailVerified: null
+        emailVerified: null,
+        userResponse: null
     }
 })
 
@@ -31,8 +32,13 @@ export class AuthState {
             realm: null,
             username: null,
             email: null,
-            emailVerified: null
+            emailVerified: null,
+            userResponse: null
         });
+    }
+    @Action(ResetUser)
+    getAuth(context: StateContext<User>) {
+        return context.getState()
     }
 
 }

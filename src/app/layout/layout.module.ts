@@ -7,6 +7,7 @@ import { EventsListComponent } from './components/events-list/events-list.compon
 import { UserComponent } from './elements/user/user.component';
 import { EventComponent } from './elements/event/event.component';
 import { NewEventModalComponent } from './components/new-event-modal/new-event-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const COMPONENTS = [
   HeaderComponent, UsersListComponent, EventsListComponent
@@ -20,10 +21,12 @@ const ELEMENTS = [
   ...ELEMENTS,
   NewEventModalComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
-    ...COMPONENTS
+    ...COMPONENTS,
+  ...ELEMENTS
   ]
 })
 export class LayoutModule { }

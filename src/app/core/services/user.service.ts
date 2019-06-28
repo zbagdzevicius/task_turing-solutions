@@ -17,7 +17,7 @@ export class UserService {
     return this.http.get(`${environment.apiUrl}/Users/${userId}/Events`)
   }
   login(username: string, password: string) {
-    return this.http.post(`${environment.apiUrl}/Users`, { username, password })
+    return this.http.post(`${environment.apiUrl}/Users/login`, { username, password })
   }
   register(user: User) {
     return this.http.get(`${environment.apiUrl}/Users`)

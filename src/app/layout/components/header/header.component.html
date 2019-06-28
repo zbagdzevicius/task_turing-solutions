@@ -1,3 +1,5 @@
-<p>
-  header works!
-</p>
+<nav *ngIf="userLoggedIn" class="container end">
+  <app-button [name]="'Users'" (click)="navigate('users')"></app-button>
+  <app-button [name]="'Events'" (click)="navigate('events')"></app-button>
+  <app-button [name]="'Logout'" (click)="logout()"></app-button>
+</nav>

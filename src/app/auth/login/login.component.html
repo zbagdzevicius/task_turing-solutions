@@ -1,3 +1,25 @@
-<p>
-  login works!
-</p>
+<form
+  [formGroup]="loginFormGroup"
+  (ngSubmit)="onSubmit()"
+  class="container updown center-vertical center"
+>
+  <input
+    type="text"
+    class="item grey"
+    formControlName="username"
+    placeholder="username"
+    [ngClass]="{ invalid: loginFormGroup.controls.username.invalid }"
+  />
+  <input
+    type="password"
+    class="item grey"
+    formControlName="password"
+    placeholder="password"
+    [ngClass]="{ invalid: loginFormGroup.controls.password.invalid }"
+  />
+  <app-button
+    type="submit"
+    [disabled]="!loginFormGroup.valid"
+    [name]="'login'"
+  ></app-button>
+</form>

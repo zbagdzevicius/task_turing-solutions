@@ -1,3 +1,11 @@
-<p>
-  events-list works!
-</p>
+<app-button [name]="'Add new event'" (click)="newEventModal = true"></app-button>
+<ul>
+  <li *ngFor="let event of events">
+    <app-event [event]="event"></app-event>
+  </li>
+</ul>
+
+<app-new-event-modal *ngIf="newEventModal"
+(closeModal)="newEventModal=false"
+(addNewEvent)="getEvents()"
+></app-new-event-modal>

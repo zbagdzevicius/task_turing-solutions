@@ -21,8 +21,8 @@ export class EventService {
   post(event: Event) {
     const formData = new FormData();
     formData.append('title', event.title);
-    formData.append('title', event.city);
-    formData.append('title', event.date);
+    formData.append('city', event.title);
+    formData.append('date', event.title);
     formData.append('userIds', event.userIds);
     return this.http.post(`${environment.apiUrl}/events/createWithUsers`, formData)
   }

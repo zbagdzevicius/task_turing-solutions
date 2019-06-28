@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+  display: flex;
+  &.justify {
+    justify-content: space-between;
+  }
+  &.justify-vertical {
+    justify-items: stretch;
+  }
+  &.center {
+    justify-content: center;
+  }
+  &.end {
+    justify-content: flex-end;
+  }
+  &.center-vertical {
+    align-items: center;
+  }
+  &.spacing {
+    justify-content: space-around;
+  }
+  .item {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  &.updown {
+    flex-direction: column;
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+input {
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid grey;
+  padding: 10px 15px;
+  vertical-align: middle;
+  &:focus {
+    outline: green auto 1px;
+  }
+  &.invalid:focus {
+    outline: red auto 1px;
+  }
+}
+
+*{
+  margin: 5px;
+}
+
+ul{
+  list-style-type: none;
+}

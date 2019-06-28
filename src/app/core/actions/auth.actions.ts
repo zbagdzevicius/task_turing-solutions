@@ -8,4 +8,7 @@ export class SetUser {
   export class ResetUser {
     static readonly type = '[auth] reset user';
   }
+  export class GetUser {
+    static readonly type = '[auth] get user';
+  }
   

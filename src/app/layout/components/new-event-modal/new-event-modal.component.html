@@ -1,3 +1,31 @@
-<p>
-  new-event-modal works!
-</p>
+<div class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="closedModal()">&times;</span>
+    <form [formGroup]="newEventFormGroup" (ngSubmit)="submit()">
+      <label
+            ><input
+              type="text"
+              placeholder="event name"
+              formControlName="eventName"
+          /></label>
+      <ul class="container updown">
+        <li
+          formArrayName="users"
+          *ngFor="
+            let user of newEventFormGroup.controls.users.controls;
+            let i = index
+          " [ngClass]="{'checked': checked.includes(i)}"
+           (click)="changePositions(i)"
+        >
+          <label>
+            <input type="checkbox" [formControlName]="i"/>
+            {{ usersList[i].username }}
+          </label>
+        </li>
+      </ul>
+
+      <app-button type="submit" [name]="'Add New'"></app-button>
+    </form>
+  </div>
+</div>

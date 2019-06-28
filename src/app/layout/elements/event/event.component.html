@@ -1,3 +1,12 @@
-<p>
-  event works!
-</p>
+<span class="name">{{ event.title }}</span>
+<app-button [name]="'expand'" *ngIf="!expanded; else collapse" (click)="expand()"></app-button>
+<ng-template #collapse>
+  <app-button [name]="'collapse'" (click)="expanded = !expanded"></app-button>
+</ng-template>
+
+<div *ngIf="expanded">
+  <span>Event users</span>
+  <ul>
+    <li *ngFor="let user of eventUsers"><span>{{ user.username }}</span></li>
+  </ul>
+</div>

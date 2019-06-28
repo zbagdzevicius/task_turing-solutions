@@ -1,3 +1,13 @@
-<p>
-  user works!
-</p>
+<span class="name">{{ user.username }}</span>
+<app-button [name]="'expand'" *ngIf="!expanded; else collapse" (click)="expanded = !expanded"></app-button>
+<ng-template #collapse>
+  <app-button [name]="'collapse'" (click)="expanded = !expanded"></app-button>
+</ng-template>
+
+<div *ngIf="expanded">
+  <ul>
+    <li *ngIf="user.email">user email: {{ user.email }}</li>
+    <li *ngIf="user.emailVerified">email verified: {{ user.emailVerified }}</li>
+    <li *ngIf="user.realm">user realm: {{ user.realm }}</li>
+  </ul>
+</div>
