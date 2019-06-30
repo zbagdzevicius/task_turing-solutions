@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI]
 
+## Things to do Before
+
+install yarn
+
+Run `yarn` to install dependencies in current project directory.
+
 ## Development server
 
 Run `yarn start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
